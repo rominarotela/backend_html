@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <meta charset=UTF-8>
+    <script crossorigin="anonymous"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</header>
+<body>
+<div class="formbold-main-wrapper">
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
+    <div class="formbold-form-wrapper">
+<!--                <form action="" method="POST">-->
+        <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="medico">Medico</label>
+            <input
+                    class="formbold-form-input medico"
+                    id="medico"
+                    name="medico"
+                    placeholder="Full Name"
+                    type="number"
+            />
+        </div>
+
+        <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="paciente">Paciente</label>
+            <input
+                    class="formbold-form-input paciente"
+                    id="paciente"
+                    name="paciente"
+                    placeholder="Paciente"
+                    type="number"
+            />
+        </div>
+
+        <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="fecha"> Fecha </label>
+            <input
+                    class="formbold-form-input fecha"
+                    id="fecha"
+                    name="fecha"
+                    type="date"
+            />
+        </div>
+
+        <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="motivo">Motivo de la consulta</label>
+            <textarea
+                    class="formbold-form-input motivo"
+                    id="motivo"
+                    name="motivo"
+                    placeholder="Type your message"
+                    rows="6"
+            ></textarea>
+        </div>
+
+        <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="diagnostico">Diagnostico</label>
+            <textarea
+                    class="formbold-form-input diagnostico"
+                    id="diagnostico"
+                    name="diagnostico"
+                    placeholder="Type your message"
+                    rows="6"
+            ></textarea>
+        </div>
+
+        <div class="formbold-mb-5">
+            <label class="formbold-form-label" for="tratamiento">Tratamiento</label>
+            <textarea
+                    class="formbold-form-input tratamiento"
+                    id="tratamiento"
+                    name="tratamiento"
+                    placeholder="Type your message"
+                    rows="6"
+            ></textarea>
+        </div>
+
+        <div>
+            <button class="btn formbold-btn">Submit</button>
+        </div>
+        <!--        </form>-->
+    </div>
+</div>
+</body>
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+    }
+
+    .formbold-mb-5 {
+        margin-bottom: 20px;
+    }
+
+    .formbold-pt-3 {
+        padding-top: 12px;
+    }
+
+    .formbold-main-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px;
+    }
+
+    .formbold-form-wrapper {
+        margin: 0 auto;
+        max-width: 550px;
+        width: 100%;
+        background: white;
+    }
+
+    .formbold-form-label {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        color: #07074d;
+        margin-bottom: 12px;
+    }
+
+    .formbold-form-label-2 {
+        font-weight: 600;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .formbold-form-input {
+        width: 100%;
+        padding: 12px 24px;
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        background: white;
+        font-weight: 500;
+        font-size: 16px;
+        color: #6b7280;
+        outline: none;
+        resize: none;
+    }
+
+    .formbold-form-input:focus {
+        border-color: #6a64f1;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .formbold-btn {
+        text-align: center;
+        font-size: 16px;
+        border-radius: 6px;
+        padding: 14px 32px;
+        border: none;
+        font-weight: 600;
+        background-color: #6a64f1;
+        color: white;
+        cursor: pointer;
+    }
+
+    .formbold-btn:hover {
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .formbold--mx-3 {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .formbold-px-3 {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .w-full {
+        width: 100%;
+    }
+
+    @media (min-width: 540px) {
+        .sm\:w-half {
+            width: 50%;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+
+        const url = 'http://localhost:8080/prueba/ficha';
+        // const data = JSON.stringify({
+        //
+        //     "nombre": $('#medico'),
+        //     "apellido": $('#paciente'),
+        //     "cedula": "123456",
+        //     "email": "adrian@hotmail.com",
+        //     "telefono": "123456",
+        //     "nacimiento": "01-01-1993",
+        //     "especialidad": 1,
+        //     "usuario": "pgimenez",
+        //     "contrasena": "pgimenez"
+        // });
+
+        let medico = $('#medico')
+        let paciente = $('#paciente')
+        let fecha = $('#fecha')
+        let motivo = $('#motivo')
+        let diagnostico = $('#diagnostico')
+        let tratamiento = $('#tratamiento')
+
+        $('.btn').click(function () {
+            const data = JSON.stringify({
+                "fecha": fecha[0].value,
+                "medico":{ "idMedico": medico[0].value },
+                "paciente": { "idPaciente": paciente[0].value},
+                "detalle": 'Motivo: ' + motivo[0].value + ', ' +  'Diagnostico: ' + diagnostico[0].value + ', ' + 'Tratamiento: ' + tratamiento[0].value
+            });
+
+            console.log("medico", medico[0].value);
+            console.log("paciente", paciente[0].value);
+            console.log("fecha", fecha[0].value);
+            console.log("motivo", 'Motivo: ' + motivo[0].value + ', ' +  'Diagnostico: ' + diagnostico[0].value + ', ' + 'Tratamiento: ' + tratamiento[0].value );
+            fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                cache: 'default',
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                }),
+                body: data
+            }).then(res => console.log(res))
+                .catch(error =>
+                    alert("¡Error!", error)
+                ).then(response =>
+                    alert("¡Ficha agregada con éxito!")
+
+            );
+            // window.location.assign("login.html");
+        });
+    });
+</script>
